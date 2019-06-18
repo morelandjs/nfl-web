@@ -1,30 +1,47 @@
 NFL rankings and predictions
 ############################
 
-Package to source NFL data and generate rankings and predictions using the `Margin-dependent Elo (MELO) <https://github.com/morelandjs/melo>`_ model.
+Package to source NFL game data, generate rankings and predictions using the `Margin-dependent Elo (MELO) <https://github.com/morelandjs/melo>`_ model, and post the predictions to a static web page.
 
 Installation
 ============
 
-.. code-block:: Bash
+First, clone the git repository and cd into the parent directory. ::
 
-    git clone git@github.com:morelandjs/nfl-model.git && cd nfl-model
+   git clone git@github.com:morelandjs/nfl-model.git && cd nfl-model
+
+Next, activate a Python2 virtual environment. ::
+
     python2 -m virtualenv env
     source env/bin/activate
+
+Finally, install the package using pip. ::
+
     pip2 install -r requirements.txt
 
-Note, due to the limitations of ``nflgame``, all packages should be installed into a Python2 virtual environment.
+Note, due to the limitations of ``nflgame``, all packages must be installed into a Python2 virtual environment.
 
 Usage
 =====
 
-This package contains two modules in the ``src`` directory.
-The first ``update_database.py`` initializes and syncs the NFL game data SQL database, and the second ``train_model.py`` pulls game stats from the database to generate model predictions.
-Each module is intended to be run as a script from the parent directory, e.g.
+Building the static website requires three actions:
 
-.. code-block:: Bash
+1. Download the NFL game data and store it in a SQL database.
+2. Train the Margin-dependent Elo (MELO) model using the contents of the database.
+3. Compile the static webpage using the predictions of the model.
 
-    python -m src.update_database
-    python -m src.rank_teams
+Keeping the website current therefore involves iterating over each action as many times as necessary.
 
-Running the ``train_model.py`` module generates a json file containing a ranked list of all NFL teams based on the current state of the SQL database.
+The NFL game data is acquired by running the ``update_database.py`` script contained in the package's model folder. ::
+
+   python -m src.update_database
+
+Once the database is populated, run ``rank_teams.py`` to pull stats from the database and compute the MELO model predictions. ::
+
+   python -m src.rank_teams
+
+This generates a JSON file containing the prediction results and places the file in the website's static build directory.
+
+Finally, compile (or recompile) the static webpage to display the latest model results. ::
+
+   python -m website.compile

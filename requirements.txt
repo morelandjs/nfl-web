@@ -1,7 +1,9 @@
 backports.functools-lru-cache==1.5
 beautifulsoup4==4.7.1
 httplib2==0.13.0
+Jinja2==2.10.1
 lxml==4.3.4
+MarkupSafe==1.1.1
 melo==1.0.2
 nflgame-redux==1.2.23
 numpy==1.16.4
