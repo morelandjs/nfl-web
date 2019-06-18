@@ -6,9 +6,6 @@ import sqlite3
 import nflgame
 
 
-now = datetime.now()
-
-
 def initialize_database(conn):
     """
     Initialize the SQL database and create the games table.
@@ -61,17 +58,17 @@ def update_database(conn):
     Save games to the SQL database.
 
     """
+    now = datetime.now()
+    c = conn.cursor()
+
     start_season, start_week = start_update(conn)
     end_season = now.year - 1 if now.month < 8 else now.year
-    c = conn.cursor()
 
     # loop over nfl season years 2009-present
     for season in range(start_season, end_season + 1):
 
         # loop over nfl weeks 1-17
         for week in range(start_week, 18):
-            # subsequent seasons should start from week 1
-            start_week = 1
 
             # print progress to stdout
             print('[UPDATING] Season {} Week {}'.format(season, week))
@@ -98,6 +95,9 @@ def update_database(conn):
                     """, values)
                 except sqlite3.IntegrityError:
                     continue
+
+        # subsequent seasons should start from week 1
+        start_week = 1
 
     conn.commit()
 
