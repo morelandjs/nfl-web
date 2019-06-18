@@ -1,7 +1,7 @@
 NFL rankings and predictions
 ############################
 
-Python package to source NFL game data and generate rankings and predictions using the `Margin-dependent Elo (MELO) <https://github.com/morelandjs/melo>`_ model.
+Python package to source NFL data and generate rankings and predictions using the `Margin-dependent Elo (MELO) <https://github.com/morelandjs/melo>`_ model.
 
 Installation
 ============
