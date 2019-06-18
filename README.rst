@@ -9,7 +9,11 @@ Installation
 .. code-block:: Bash
 
     git clone git@github.com:morelandjs/nflrank.git && cd nflrank
-    pip install -r requirements.txt
+    python2 -m virtualenv env
+    source env/bin/activate
+    pip2 install -r requirements.txt
+
+Note, due to the limitations of ``nflgame``, all packages should be installed into a Python2 virtual environment.
 
 Usage
 =====
