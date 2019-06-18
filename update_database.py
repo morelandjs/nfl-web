@@ -105,7 +105,7 @@ def update_database(conn):
 if __name__ == '__main__':
 
     # establish connection, then initialize and update database
-    conn = sqlite3.connect('nfl_db.sqlite')
+    conn = sqlite3.connect('nfldb.sqlite')
     initialize_database(conn)
     update_database(conn)
     conn.close()
