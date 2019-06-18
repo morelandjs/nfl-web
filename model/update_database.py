@@ -1,9 +1,12 @@
 #!/usr/bin/env python2
 
 from datetime import datetime
+from pathlib import Path
 import sqlite3
 
 import nflgame
+
+from . import dbpath
 
 
 def initialize_database(conn):
@@ -105,7 +108,7 @@ def update_database(conn):
 if __name__ == '__main__':
 
     # establish connection, then initialize and update database
-    conn = sqlite3.connect('nfldb.sqlite')
+    conn = sqlite3.connect(str(dbpath))
     initialize_database(conn)
     update_database(conn)
     conn.close()

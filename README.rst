@@ -8,7 +8,7 @@ Installation
 
 .. code-block:: Bash
 
-    git clone git@github.com:morelandjs/nflrank.git && cd nflrank
+    git clone git@github.com:morelandjs/nfl-model.git && cd nfl-model
     python2 -m virtualenv env
     source env/bin/activate
     pip2 install -r requirements.txt
@@ -25,6 +25,6 @@ Each module is intended to be run as a script from the parent directory, e.g.
 .. code-block:: Bash
 
     python -m src.update_database
-    python -m src.train_model
+    python -m src.rank_teams
 
 Running the ``train_model.py`` module generates a json file containing a ranked list of all NFL teams based on the current state of the SQL database.

@@ -7,6 +7,8 @@ import sqlite3
 from melo import Melo
 import numpy as np
 
+from . import dbpath
+
 
 def read_table(conn):
     """
@@ -32,7 +34,7 @@ def read_table(conn):
 if __name__ == '__main__':
 
     # read nfl game data from sql table
-    conn = sqlite3.connect('nfldb.sqlite')
+    conn = sqlite3.connect(str(dbpath))
     gamedata = read_table(conn)
 
     # melo model training inputs
@@ -58,5 +60,5 @@ if __name__ == '__main__':
     rankings = nfl_spreads.rank(datetime.now(), statistic='mean')
 
     # save rankings to json file
-    with open('rankings.json', 'w') as f:
+    with open('website/static/rankings.json', 'w') as f:
         json.dump(rankings, f)
