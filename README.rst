@@ -5,6 +5,7 @@ Python package to source NFL game data and generate rankings and predictions usi
 
 Installation
 ============
+
 .. code-block:: Bash
 
     git clone git@github.com:morelandjs/nflrank.git && cd nflrank
@@ -15,7 +16,9 @@ Usage
 
 This package contains two modules in the ``src`` directory.
 The first ``update_database.py`` initializes and syncs the NFL game data SQL database, and the second ``train_model.py`` pulls game stats from the database to generate model predictions.
-Each module is intended to be run as a script from the parent directory, e.g. ::
+Each module is intended to be run as a script from the parent directory, e.g.
+
+.. code-block:: Bash
 
     python -m src.update_database
     python -m src.train_model
