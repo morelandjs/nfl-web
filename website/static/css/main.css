@@ -1,0 +1,32 @@
+* {
+  font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
+    'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace,
+    serif;
+}
+body {
+  margin: 0;
+  padding: 50px 2em;
+  color: #2a2a2a;
+}
+a {
+  color: #d47;
+  text-decoration: none;
+  border-bottom: 1px solid #d47;
+  box-sizing: border-box;
+}
+p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+article {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+}
+
+div.card {
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  padding: 1em;
+}

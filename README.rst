@@ -34,14 +34,8 @@ Keeping the website current therefore involves iterating over each action as man
 
 The NFL game data is acquired by running the ``update_database.py`` script contained in the package's model folder. ::
 
-   python -m src.update_database
+   python -m model.update_database
 
-Once the database is populated, run ``rank_teams.py`` to pull stats from the database and compute the MELO model predictions. ::
+Once the database is populated, compile (or recompile) the static webpage to display the latest model results. ::
 
-   python -m src.rank_teams
-
-This generates a JSON file containing the prediction results and places the file in the website's static build directory.
-
-Finally, compile (or recompile) the static webpage to display the latest model results. ::
-
-   python -m website.compile
+   ./build.sh

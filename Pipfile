@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+
+[packages]
+beautifulsoup4 = "==4.7.1"
+httplib2 = "==0.13.0"
+lxml = "==4.3.4"
+melo = "==1.0.2"
+nflgame-redux = "==1.2.23"
+numpy = "==1.16.4"
+pytz = "==2019.1"
+scipy = "==1.2.2"
+soupsieve = "==1.9.1"
+"backports.functools_lru_cache" = "==1.5"
+Jinja2 = "==2.10.1"
+MarkupSafe = "==1.1.1"
+
+[requires]
+python_version = "3.7"
