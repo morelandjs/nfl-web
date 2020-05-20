@@ -9,7 +9,7 @@ autopep8 = "*"
 
 [packages]
 beautifulsoup4 = "==4.7.1"
-httplib2 = "==0.13.0"
+httplib2 = "==0.18.0"
 lxml = "==4.3.4"
 melo = "==1.0.2"
 nflgame-redux = "==1.2.23"
